@@ -19,7 +19,6 @@ class CreateCategoryTable extends Migration
 			$table->longText('description')->nullable();
 			$table->integer('weight')->nullable();
 			$table->integer('parent');
-			$table->timestamps();
         });
     }
 

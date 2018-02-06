@@ -21,7 +21,6 @@ class CreateMenusTable extends Migration
 			$table->string('parent');
 			$table->integer('weight');
 			$table->longText('description')->nullable();
-            $table->timestamps();
         });
     }
 

@@ -22,7 +22,6 @@ class CreateProductTable extends Migration
 			$table->integer('sid');//Shop ID 
 			$table->string('images');//serialize images
 			$table->longText('description')->nullable();
-			$table->timestamps();
         });
     }
 
