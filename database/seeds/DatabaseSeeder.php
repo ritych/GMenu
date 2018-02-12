@@ -73,8 +73,5 @@ class DatabaseSeeder extends Seeder
 		ProductOption::create(['aid' => '5', 'name' => 'Аметист']);
 		
 		
-		
-		
-
     }
 }

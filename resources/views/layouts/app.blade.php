@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel Shop</title>
-		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
 		<header>
@@ -14,9 +14,18 @@
 		<nav>
 			@yield('menu')
 		</nav>
+		<section class="advrt">@yield('advrt')</section>
 		<main>
-			<section>@yield('content')</section>
-			<aside>@yield('sidebar')<aside>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						<aside class="sidebar">@yield('sidebar')</aside>
+					</div>
+					<div class="col-lg-9">
+						<section class="contant">@yield('content')</section>
+					</div>
+				</div>	
+			</div>
 		</main>
 		<footer>
 			@yield('footer')

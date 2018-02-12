@@ -7,3 +7,24 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+//font-awesome
+@fa-font-path: "../fonts";
+@import "~font-awesome/scss/font-awesome.scss";
+//layouts
+body{text-align:left;}
+header{height:67px;}
+.logo img, .advrt img{width:100%;}
+.phone, .city, .search, .cart, .login{}
+//advertising
+.advrt{margin:20px 0;}
+//navigations
+nav{background:$nav-back;padding:10px 0;}
+.nav > li > a {padding: 5px;text-transform:uppercase;color:#000;}
+//
+.sidebar{border:1px solid #909090;padding:10px;}
+//footer
+footer{background:$nav-back;padding:10px 0;margin:20px 0 0 0;}
+
+
+

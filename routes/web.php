@@ -13,6 +13,12 @@
 
 Route::get('/', 'HomeController@front');
 
+Route::group(['middleware' => 'web'], function () {
+    Route::post('/register', 'Auth\RegisterController@register');
+    Route::post('/login', 'Auth\LoginController@login');
+    Route::get('/logout', 'Auth\LoginController@logout');
+});
+
 Route::get('/catalog', 'CatalogController@catalogs');
 Route::get('/catalog/{id}', 'CatalogController@catalog');
 
