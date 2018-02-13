@@ -18,10 +18,7 @@
 		<main>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3">
-						<aside class="sidebar">@yield('sidebar')</aside>
-					</div>
-					<div class="col-lg-9">
+					<div class="col-lg-12">
 						<section class="content">@yield('content')</section>
 					</div>
 				</div>	

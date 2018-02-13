@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_without_sidebar')
 
 @section('header')
 <h1>Ritych</h1>
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-
+	<?php echo '<pre>';print_r($product); ?>
 @endsection
 
 @section('footer')

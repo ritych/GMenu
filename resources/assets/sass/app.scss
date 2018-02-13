@@ -11,18 +11,38 @@
 //font-awesome
 @fa-font-path: "../fonts";
 @import "~font-awesome/scss/font-awesome.scss";
+
 //layouts
 body{text-align:left;}
 header{height:67px;}
 .logo img, .advrt img{width:100%;}
-.phone, .city, .search, .cart, .login{}
+.phone, .city, .search, .cart, .login{height:67px;vertical-align:middle;display:table-cell;text-align:center;}
+.clear{clear:both;}
 //advertising
 .advrt{margin:20px 0;}
+
 //navigations
 nav{background:$nav-back;padding:10px 0;}
 .nav > li > a {padding: 5px;text-transform:uppercase;color:#000;}
-//
+
+//sidebar
 .sidebar{border:1px solid #909090;padding:10px;}
+
+//catalog
+.catalog_filter{	
+	text-align:right;
+	.form-group{width:200px;text-align:right;}
+}
+.catalog_products{
+	padding:0px;
+	img{width:100%;}
+	li{list-style:none;float:left;margin:0 15px 30px 15px;border:1px solid #909090;background:#f0f0f0;width:30%;padding:10px;}
+	li:first-child, li:nth-child(3n+1){margin-left:0px;}
+	.catalog_product_title{}
+	.catalog_product_sell_price{}
+	.catalog_product_tocart{}
+}
+
 //footer
 footer{background:$nav-back;padding:10px 0;margin:20px 0 0 0;}
 

@@ -8,7 +8,8 @@ class ProductController extends Controller
 {
     
 	public function product_view($id){
-		return view('product.product_view');
+		$product=\App\Product::join('nodes', 'nodes.nid', 'products.nid')->select('products.*', 'nodes.title')->where('products.nid', '=', $id)->get();
+		return view('product.product_view', compact('product'));
 	}
 	
 	public function product_edit($id){
@@ -19,7 +20,7 @@ class ProductController extends Controller
 		return view('product.product_delete');
 	}
 	
-	public function product_add{
+	public function product_add(){
 		return view('product.product_add');
 	}
 }

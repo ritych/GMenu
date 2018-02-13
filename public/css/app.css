@@ -11411,6 +11411,21 @@ header {
   width: 100%;
 }
 
+.phone,
+.city,
+.search,
+.cart,
+.login {
+  height: 67px;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+}
+
 .advrt {
   margin: 20px 0;
 }
@@ -11429,6 +11444,38 @@ nav {
 .sidebar {
   border: 1px solid #909090;
   padding: 10px;
+}
+
+.catalog_filter {
+  text-align: right;
+}
+
+.catalog_filter .form-group {
+  width: 200px;
+  text-align: right;
+}
+
+.catalog_products {
+  padding: 0px;
+}
+
+.catalog_products img {
+  width: 100%;
+}
+
+.catalog_products li {
+  list-style: none;
+  float: left;
+  margin: 0 15px 30px 15px;
+  border: 1px solid #909090;
+  background: #f0f0f0;
+  width: 30%;
+  padding: 10px;
+}
+
+.catalog_products li:first-child,
+.catalog_products li:nth-child(3n+1) {
+  margin-left: 0px;
 }
 
 footer {
