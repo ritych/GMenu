@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@front');
 Route::group(['middleware' => 'web'], function () {
     Route::post('/register', 'Auth\RegisterController@register');
     Route::post('/login', 'Auth\LoginController@login');
+	Route::post('/create_user', 'Auth\RegisterController@register');
+	
     Route::get('/logout', 'Auth\LoginController@logout');
 });
 

@@ -1,4 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.app_without_sidebar')
+
+@section('header')
+	@include('main.header');
+@endsection
+
+@section('menu')
+	@include('main.menu');
+@endsection
 
 @section('content')
 <div class="container">
@@ -104,4 +112,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+	@include('main.footer');
 @endsection

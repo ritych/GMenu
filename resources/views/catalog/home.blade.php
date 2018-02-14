@@ -6,7 +6,7 @@
 
 @section('advrt')
 <div class="container">
-	<img src="{{asset('images/advrt.png')}}" alt="logo" />
+	<img src="images/advrt.png" alt="logo" />
 </div>
 @endsection
 
@@ -28,7 +28,7 @@
 	<ul class="catalog_products">
 		@foreach ($products as $product) 
 			<li>
-				<img src="{{asset('images/logo.png')}}" alt="logo" />
+				<img src="images/logo.png" alt="logo" />
 				<div class="catalog_product_title"><a href="{{url('/product/'.$product->nid)}}">{{ $product->title }}</a></div>
 				<div class="catalog_product_sell_price">{{$product->sell_price }}</div>
 				<div class="catalog_product_tocart"><button type="button" class="btn btn-default">Заказать</button></div>

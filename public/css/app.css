@@ -11433,6 +11433,7 @@ header {
 nav {
   background: #e4e4e4;
   padding: 10px 0;
+  height: 53px;
 }
 
 .nav > li > a {
@@ -11482,5 +11483,6 @@ footer {
   background: #e4e4e4;
   padding: 10px 0;
   margin: 20px 0 0 0;
+  height: 90px;
 }
 
