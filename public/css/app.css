@@ -11493,6 +11493,80 @@ nav {
   border-radius: 10px;
 }
 
+.product_banners {
+  margin-top: 20px;
+}
+
+.product_banners li {
+  list-style: none;
+}
+
+.product_banners h3 {
+  text-align: center;
+}
+
+.product_banners .product_banner_circle {
+  text-align: center;
+}
+
+.product_banners .product_banner_circle span {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  border: 1px solid #333;
+  margin-left: 35%;
+  display: block;
+}
+
+.product_banners .product_banner_text {
+  text-align: justify;
+}
+
+.product_left {
+  padding: 0px !important;
+}
+
+.product_left li {
+  list-style: none;
+}
+
+.product_left ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.product_left .product_image_main img {
+  width: 100%;
+}
+
+.product_left .product_image_main {
+  padding: 0px !important;
+}
+
+.product_left .up_arrow {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.product_left .down_arrow {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.attributes_options {
+  padding: 0px;
+}
+
+.attributes_options li {
+  display: inline-block;
+  border: 1px solid #909090;
+  padding: 5px;
+  background: #fff;
+  list-style: none;
+  margin: 0 5px 5px 0;
+}
+
 footer {
   background: #e4e4e4;
   padding: 10px 0;

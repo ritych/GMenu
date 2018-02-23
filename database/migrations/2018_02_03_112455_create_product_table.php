@@ -16,7 +16,7 @@ class CreateProductTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->integer('nid');
 			$table->string('category');//Категория
-			$table->string('articul')->unique();//Артикул
+			$table->string('sku')->unique();//Артикул
 			$table->unsignedInteger('sell_price');//Цена продажи
 			$table->unsignedInteger('old_price');//Старая цена
 			$table->integer('sid');//Shop ID 

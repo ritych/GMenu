@@ -52,16 +52,52 @@
 		<div class="col-lg-6"><input type="text" class="form-control" placeholder="От"></div>
 		<div class="col-lg-6"><input type="text" class="form-control" placeholder="До"></div>
 	</div>
+	<?php // echo '<pre>';print_r($options);echo '</pre>'; ?>
 	<!--*********************-->
 	<h3 class="block_title">Размер</h3>
+		<ul class="attributes_options">
+		@foreach ($options as $option) 
+			@if ($option->aid==1)
+				<li>{{ $option->name }}</li>
+			@endif
+		@endforeach
+		</ul>
 	<!--*********************-->
 	<h3 class="block_title">Пол</h3>
+		<ul class="attributes_options">
+		@foreach ($options as $option) 
+			@if ($option->aid==2)
+				<li>{{ $option->name }}</li>
+			@endif
+		@endforeach
+		</ul>
 	<!--*********************-->
 	<h3 class="block_title">Металл</h3>
+		<ul class="attributes_options">
+		@foreach ($options as $option) 
+			@if ($option->aid==3)
+				<li>{{ $option->name }}</li>
+			@endif
+		@endforeach
+		</ul>
 	<!--*********************-->
 	<h3 class="block_title">Цвет</h3>
+		<ul class="attributes_options">
+		@foreach ($options as $option) 
+			@if ($option->aid==4)
+				<li>{{ $option->name }}</li>
+			@endif
+		@endforeach
+		</ul>
 	<!--*********************-->
 	<h3 class="block_title">Состав</h3>
+		<ul class="attributes_options">
+		@foreach ($options as $option) 
+			@if ($option->aid==5)
+				<li>{{ $option->name }}</li>
+			@endif
+		@endforeach
+		</ul>
 @endsection
 
 @section('footer')
