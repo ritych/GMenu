@@ -42,7 +42,7 @@
 @section('sidebar')
 	<h3 class="block_title">Категории</h3>
 	<ul class="nav">
-		@foreach ($category as $link) 
+		@foreach (\App\Category::all() as $link) 
 			<li><a href="{{ url('/catalog/'.$link->cid) }}" title="{{ $link->title }}">{{ $link->title }}</a></li>
 		@endforeach
 	</ul>

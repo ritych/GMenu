@@ -25,9 +25,22 @@ Route::get('/catalog', 'CatalogController@catalogs');
 Route::get('/catalog/{id}', 'CatalogController@catalog');
 
 Route::get('/product/{id}', 'ProductController@product_view');
-Route::get('/product/edit/{id}', 'ProductController@product_edit');
-Route::get('/product/delete/{id}', 'ProductController@product_delete');
-Route::get('/product/add', 'ProductController@product_add');
+Route::get('/admin/product/edit/{id}', 'ProductController@product_edit');
+Route::get('/admin/product/delete/{id}', 'ProductController@product_delete');
+Route::get('/admin/product/add', 'ProductController@product_add');
+
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/content', 'AdminController@content');
+Route::get('/admin/page', 'AdminController@allpages');
+Route::get('/admin/page/create', 'PageController@createpage');
+Route::get('/admin/page/{id}/edit', 'PageController@editpage');
+Route::get('/admin/page/{id}/delete', 'PageController@deletepage');
+
+Route::get('/admin/menu', 'AdminController@index');
+Route::get('/admin/menu/create', 'MenuController@index');
+Route::get('/admin/menu/{id}/edit', 'MenuController@index');
+Route::get('/admin/menu/{id}/delete', 'MenuController@index');
+
 
 
 Auth::routes();

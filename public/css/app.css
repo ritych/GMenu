@@ -11402,8 +11402,120 @@ body {
   text-align: left;
 }
 
+.admin_section {
+  background: #000;
+  height: 30px;
+  color: #fff;
+  position: relative;
+}
+
+.admin_section .sf-menu {
+  float: left;
+}
+
+.admin_section .sf-menu ul {
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  min-width: 12em;
+}
+
+.admin_section .sf-menu a {
+  padding: .75em 1em;
+  text-decoration: none;
+  zoom: 1;
+  color: #fff;
+}
+
+.admin_section .sf-menu li {
+  white-space: nowrap;
+  -webkit-transition: background .1s;
+  transition: background .1s;
+  float: left;
+  line-height: 30px;
+  list-style: none;
+  position: relative;
+}
+
+.admin_section .sf-menu ul {
+  background: #000;
+}
+
+.admin_section .sf-menu ul li {
+  background: #000;
+  z-index: 100;
+  border-top: 1px solid #909090;
+  float: none;
+}
+
+.admin_section .sf-menu ul ul {
+  left: 100%;
+  top: -1px;
+}
+
+.admin_section .sf-menu ul ul li {
+  background: #000;
+}
+
+.admin_section .sf-menu li:hover,
+.admin_section .sf-menu li.sfHover {
+  background: #909090;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.admin_section .sf-arrows .sf-with-ul {
+  padding-right: 2.5em;
+}
+
+.admin_section .sf-arrows .sf-with-ul:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  margin-top: -3px;
+  height: 0;
+  width: 0;
+  border: 5px solid transparent;
+  border-top-color: #dFeEFF;
+  border-top-color: rgba(255, 255, 255, 0.5);
+}
+
+.admin_section .sf-arrows ul .sf-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  border-left-color: #dFeEFF;
+  border-left-color: rgba(255, 255, 255, 0.5);
+}
+
+.admin_section .sf-arrows ul li > .sf-with-ul:focus:after,
+.admin_section .sf-arrows ul li:hover > .sf-with-ul:after,
+.admin_section .sf-arrows ul .sfHover > .sf-with-ul:after {
+  border-left-color: white;
+}
+
+.admin_section .sf-arrows > li > .sf-with-ul:focus:after,
+.admin_section .sf-arrows > li:hover > .sf-with-ul:after,
+.admin_section .sf-arrows > .sfHover > .sf-with-ul:after {
+  border-top-color: white;
+}
+
+.admin_section ul {
+  padding: 0;
+  margin: 0;
+}
+
+.admin_section ul ul {
+  position: absolute;
+}
+
 header {
-  height: 67px;
+  height: auto;
+}
+
+header .row {
+  position: relative;
+  z-index: 10;
 }
 
 .logo img,

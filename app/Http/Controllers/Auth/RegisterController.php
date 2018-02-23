@@ -73,7 +73,8 @@ class RegisterController extends Controller
         auth()->loginUsingId($regUser->id);
 
         Session::flash('success_message', 'Вы были успешно зарегистрированы!');
-
+		
+		return redirect('/');
         return response()->json([
             'success' => 'Пользователь успешно зарегистрирован',
         ]);
