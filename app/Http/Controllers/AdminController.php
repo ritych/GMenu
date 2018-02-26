@@ -30,6 +30,54 @@ class AdminController extends Controller
 		$menus= \App\Menu::all();
 		return view('admin.menu', compact('menus'));
 	}
+	
+	public function createmenu(){
+		return view('admin.menu_create');
+	}
+	
+	public function createmenu_submit(Request $request){
+		$data = $request->validate([
+			'title' => 'required|max:255',
+			'url' => 'required|max:255',
+			'menu_name' => 'required|max:255',	
+			'description' => 'required|max:255',	
+		]);
+		
+		$menu = new \App\Menu;
+		$menu->title = $data['title'];
+		$menu->url = $data['url'];
+		$menu->menu_name = $data['menu_name'];
+		$menu->description = $data['description'];
+		$menu->parent = '0';
+		$menu->weight = '0';
+		$menu->save();
+		
+		return redirect('/admin/menus')->with('message', 'Пункт меню создан!');
+	}
+	
+	public function editmenu($id){
+		$menu= \App\Menu::where('mid', $id)->get();
+		return view('admin.menu_edit', compact('menu', 'id'));
+	}
+	
+	public function editmenu_submit(Request $request){
+		$data = $request->validate([
+			'title' => 'required|max:255',
+			'url' => 'required|max:255',
+			'menu_name' => 'required|max:255',	
+			'description' => 'required|max:255',
+			'mid' => 'required',
+		]);
+		
+		\App\Menu::where('mid', $data['mid'])->update(['title' => $data['title'], 'url' => $data['url'], 'menu_name' => $data['menu_name'], 'description' => $data['description']]);
+		return redirect('/admin/menus')->with('message', 'Пункт меню изменен!');
+	}
+	
+	public function deletemenu($id){
+		\App\Menu::where('mid','=', $id)->delete();
+		return redirect('/admin/menus')->with('message', 'Пункт меню удален!');
+	}
+	
 //***********Options********	
 	public function alloptions(){
 		$options= \App\ProductOption::join('product_attributes', 'product_options.aid', 'product_attributes.aid')->select('product_options.*', 'product_attributes.name as aname')->orderBy('aid')->paginate(20);
@@ -77,7 +125,7 @@ class AdminController extends Controller
 	}
 //***********Atributes********	
 	public function allattributes(){
-		$attributes= \App\ProductAttribute::all()->paginate(20);
+		$attributes= \App\ProductAttribute::paginate(20);
 		return view('admin.attributes', compact('attributes'));
 	}
 	

@@ -4,8 +4,13 @@
 	@include('admin.admin_menu');
 @endsection
 
+@section('header')
+	@include('main.header');
+@endsection
+
 @section('content')
 <div class="col-lg-12">
+	@include('common.errors')
 	<h2>Список меню</h2>
 	<table class="table table-bordered table-hover table-striped">
 		<thead>
@@ -25,7 +30,7 @@
 			<td class="text-center">{{ $menu->menu_name }}</td>
 			<td class="text-center">{{ $menu->url }}</td>
 			<td class="text-center">{{ $menu->description }}</td>
-			<td class="text-center"><a href="">Изменить</a><a style="margin-left:10px;" href="">Удалить</a></td>
+			<td class="text-center"><a href="{{ url('admin/menu/edit/'.$menu->mid) }}">Изменить</a><a style="margin-left:10px;" href="{{ url('admin/menu/delete/'.$menu->mid) }}">Удалить</a></td>
 			
 		</tr>
 	@endforeach

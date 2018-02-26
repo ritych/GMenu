@@ -19,7 +19,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="{{ url('/admin/menu') }}">Меню</a>
+					<a href="{{ url('/admin/menus') }}">Меню</a>
 					<ul>
 						<li><a href="{{ url('/admin/menu/create') }}">Создать</a></li>
 					</ul>

@@ -11,8 +11,8 @@
 @section('content')
 <div class="col-lg-12">
 	@include('common.errors')
-	<h2>Создать атрибут</h2>
-	<form action="{{ url('admin/attribute/create/submit') }}" method="POST" >
+	<h2>Создать пункт меню</h2>
+	<form action="{{ url('admin/menu/create/submit') }}" method="POST" >
 		{{ csrf_field() }}
 		<div class="form-group">
 			<div class="input-group">
@@ -22,13 +22,23 @@
 		</div>
 		<div class="form-group">
 			<div class="input-group">
-				<span class="input-group-addon">Атрибут</span>
+				<span class="input-group-addon">Ссылка:</span>
+				<input name="url" type="text" class="form-control" id="url">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">Имя меню:</span>
+				<input name="menu_name" type="text" class="form-control" id="menu_name">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">Описание:</span>
 				<textarea name="description" class="form-control" rows="5" id="description"></textarea>
 			</div>
-		</div> 
-		
+		</div>
 		<button type="submit" class="btn btn-default">Создать</button>
-		
 	</form>
 </div>
 @endsection

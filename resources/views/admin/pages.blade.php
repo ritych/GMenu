@@ -4,6 +4,10 @@
 	@include('admin.admin_menu');
 @endsection
 
+@section('header')
+	@include('main.header');
+@endsection
+
 @section('content')
 <div class="col-lg-12">
 	<h2>Список страниц</h2>
