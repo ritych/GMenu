@@ -14,11 +14,12 @@
     </head>
     <body>
 		<header>
+			@yield('adminmenu')
 			@yield('header')
 		</header>
-		<nav>
-			@yield('menu')
-		</nav>
+		
+		@yield('menu')
+		
 		<section class="advrt">@yield('advrt')</section>
 		<main>
 			<div class="container">

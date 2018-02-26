@@ -25,6 +25,7 @@ Route::get('/catalog', 'CatalogController@catalogs');
 Route::get('/catalog/{id}', 'CatalogController@catalog');
 
 Route::get('/product/{id}', 'ProductController@product_view');
+Route::get('/admin/product', 'AdminController@allproducts');
 Route::get('/admin/product/edit/{id}', 'ProductController@product_edit');
 Route::get('/admin/product/delete/{id}', 'ProductController@product_delete');
 Route::get('/admin/product/add', 'ProductController@product_add');
@@ -33,13 +34,25 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/admin/content', 'AdminController@content');
 Route::get('/admin/page', 'AdminController@allpages');
 Route::get('/admin/page/create', 'PageController@createpage');
-Route::get('/admin/page/{id}/edit', 'PageController@editpage');
-Route::get('/admin/page/{id}/delete', 'PageController@deletepage');
+Route::get('/admin/page/edit/{id}', 'PageController@editpage');
+Route::get('/admin/page/delete/{id}', 'PageController@deletepage');
 
-Route::get('/admin/menu', 'AdminController@index');
+Route::get('/admin/menu', 'AdminController@allmenus');
 Route::get('/admin/menu/create', 'MenuController@index');
-Route::get('/admin/menu/{id}/edit', 'MenuController@index');
-Route::get('/admin/menu/{id}/delete', 'MenuController@index');
+Route::get('/admin/menu/edit/{id}', 'MenuController@index');
+Route::get('/admin/menu/delete/{id}', 'MenuController@index');
+
+Route::get('/admin/options', 'AdminController@alloptions');
+Route::get('/admin/option/create', 'AdminController@createoptions');
+Route::get('/admin/option/edit/{id}', 'AdminController@editoptions');
+Route::get('/admin/option/delete/{id}', 'AdminController@deleteoptions');
+
+Route::get('/admin/attributes', 'AdminController@allattributes');
+Route::get('/admin/attribute/create', 'AdminController@createattributes');
+Route::post('/admin/attribute/create/submit', 'AdminController@createattributes_submit');
+Route::get('/admin/attribute/edit/{id}', 'AdminController@editattributes');
+Route::post('/admin/attribute/edit/submit', 'AdminController@editattributes_submit');
+Route::get('/admin/attribute/delete/{id}', 'AdminController@deleteattributes');
 
 
 

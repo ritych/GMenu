@@ -25,13 +25,13 @@
 					</ul>
 				</li>
 				<li>
-					<a href="{{ url('/admin/option') }}">Опции</a>
+					<a href="{{ url('/admin/options') }}">Опции</a>
 					<ul>
 						<li><a href="{{ url('/admin/option/create') }}">Создать</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="{{ url('/admin/attribute') }}">Аттрибуты</a>
+					<a href="{{ url('/admin/attributes') }}">Аттрибуты</a>
 					<ul>
 						<li><a href="{{ url('/admin/attribute/create') }}">Создать</a></li>
 					</ul>
@@ -83,7 +83,9 @@
 	</ul>
 	<script>
 	jQuery(document).ready(function(){
-		jQuery('ul.admin-menu').superfish();
+		jQuery('ul.admin-menu').superfish({
+			speed: 'fast'
+		});
 	});
 	</script>
 </div>	

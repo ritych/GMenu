@@ -1,7 +1,7 @@
 @extends('layouts.app_without_sidebar')
 
-@section('header')
-	@include('main.header');
+@section('adminmenu')
+	@include('admin.admin_menu');
 @endsection
 
 @section('content')

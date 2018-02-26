@@ -1,3 +1,4 @@
+<nav>
 <div class="container">
 	<ul class="nav nav-justified">
 		@foreach (\App\Category::all() as $link) 
@@ -5,3 +6,4 @@
 		@endforeach
 	</ul>
 </div>
+</nav>

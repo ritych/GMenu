@@ -1,4 +1,3 @@
-@include('admin.admin_menu')
 <div class="container"><div class="row">
 	<div class="col-lg-2">
 		<div class="logo"><a href="{{ url('/') }}"><img src="{{asset('images/logo.png')}}" alt="logo" /></a></div>

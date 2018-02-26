@@ -4,7 +4,7 @@
 		<div class="col-lg-10">
 			<ul class="nav navbar-nav">
 				@foreach (\App\Menu::where('menu_name', 'main_menu')->get() as $link) 
-				<li><a href="{{ $link->url }}" title="{{ $link->title }}">{{ $link->title }}</a></li>
+				<li><a href="{{ url($link->url) }}" title="{{ $link->title }}">{{ $link->title }}</a></li>
 				@endforeach
 			</ul>
 		</div>

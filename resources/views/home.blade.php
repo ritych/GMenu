@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('adminmenu')
+	@include('admin.admin_menu');
+@endsection
+
 @section('header')
 	@include('main.header');
 @endsection

@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
 		Category::create(['title' => 'Колье', 'description' => '', 'weight' => '0', 'parent' => '0']);
 		Category::create(['title' => 'Часы', 'description' => '', 'weight' => '0', 'parent' => '0']);
 		
-		Menu::create(['title' => 'Каталог', 'description' => '', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'catalog']);
-		Menu::create(['title' => 'Услуги', 'description' => '', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'page/16']);
-		Menu::create(['title' => 'Контакты', 'description' => '', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'page/17']);
-		Menu::create(['title' => 'О проекте', 'description' => '', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'page/18']);
+		Menu::create(['title' => 'Каталог', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'catalog']);
+		Menu::create(['title' => 'Услуги', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'page/16']);
+		Menu::create(['title' => 'Контакты', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'page/17']);
+		Menu::create(['title' => 'О проекте', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'menu_name' => 'main_menu', 'weight' => '0', 'parent' => '0', 'url' => 'page/18']);
 		
 		Node::create(['nid' => '1', 'title' => 'Test product', 'type' => 'product', 'uid' => '1', 'body' => '', 'status' => '1']);
 		Product::create(['nid' => '1', 'category' => '1', 'sku' => 'art12345', 'sell_price' => '1500', 'old_price' => '1750', 'sid' => '1', 'images' => '1', 'description' => 'Роскошное кольцо, выполненное из белого золота с бриллиантами, входит в коллекцию "Зеркальный блеск". Благодаря оригинальному креплению, центральный камень может свободно вращаться относительно своей оси, беспрерывно сверкая.']);

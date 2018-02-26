@@ -16,6 +16,7 @@ class CreateProductAttributeTable extends Migration
         Schema::create('product_attributes', function (Blueprint $table) {
             $table->increments('aid');
             $table->string('name');
+			$table->longtext('description');
         });
     }
 
