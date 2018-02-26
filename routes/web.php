@@ -44,7 +44,9 @@ Route::get('/admin/menu/delete/{id}', 'MenuController@index');
 
 Route::get('/admin/options', 'AdminController@alloptions');
 Route::get('/admin/option/create', 'AdminController@createoptions');
+Route::post('/admin/option/create/submit', 'AdminController@createoptions_submit');
 Route::get('/admin/option/edit/{id}', 'AdminController@editoptions');
+Route::post('/admin/option/edit/submit', 'AdminController@editoptions_submit');
 Route::get('/admin/option/delete/{id}', 'AdminController@deleteoptions');
 
 Route::get('/admin/attributes', 'AdminController@allattributes');

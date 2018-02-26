@@ -7,8 +7,8 @@
 @section('content')
 <div class="col-lg-12">
 	@include('common.errors')
-	<h2>Создать атрибут</h2>
-	<form action="{{ url('admin/attribute/create/submit') }}" method="POST" >
+	<h2>Создать опцию</h2>
+	<form action="{{ url('admin/option/create/submit') }}" method="POST" >
 		{{ csrf_field() }}
 		<div class="form-group">
 			<div class="input-group">
@@ -18,13 +18,15 @@
 		</div>
 		<div class="form-group">
 			<div class="input-group">
-				<span class="input-group-addon">Атрибут</span>
-				<textarea name="description" class="form-control" rows="5" id="description"></textarea>
+				<span class="input-group-addon">Атрибут:</span>
+				<select name="attr" id="attr" class="form-control">
+					@foreach ($attributes as $attribute)
+					<option value="{{ $attribute->aid }}">{{ $attribute->name }}</option>
+					@endforeach
+				</select>
 			</div>
-		</div> 
-		
+		</div>
 		<button type="submit" class="btn btn-default">Создать</button>
-		
 	</form>
 </div>
 @endsection

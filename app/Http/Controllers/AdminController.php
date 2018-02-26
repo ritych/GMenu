@@ -30,14 +30,54 @@ class AdminController extends Controller
 		$menus= \App\Menu::all();
 		return view('admin.menu', compact('menus'));
 	}
-//*******************	
+//***********Options********	
 	public function alloptions(){
-		$options= \App\ProductOption::join('product_attributes', 'product_options.aid', 'product_attributes.aid')->select('product_options.*', 'product_attributes.name as aname')->get();;
+		$options= \App\ProductOption::join('product_attributes', 'product_options.aid', 'product_attributes.aid')->select('product_options.*', 'product_attributes.name as aname')->orderBy('aid')->paginate(20);
 		return view('admin.options', compact('options'));
 	}
-//*******************	
-	public function allattributes(){
+	
+	public function createoptions(){
 		$attributes= \App\ProductAttribute::all();
+		return view('admin.option_create', compact('attributes'));
+	}
+	
+	public function createoptions_submit(Request $request){
+		$data = $request->validate([
+			'title' => 'required|max:255',
+			'attr' => 'required',
+		]);
+		
+		$option = new \App\ProductOption;
+		$option->name = $data['title'];
+		$option->aid = $data['attr'];
+		$option->save();
+		
+		return redirect('/admin/options')->with('message', 'Опция создана!');
+	}
+	
+	public function editoptions($id){
+		$option= \App\ProductOption::where('oid','=', $id)->get();
+		return view('admin.options_edit', compact('option', 'id'));
+	}
+	
+	public function editoptions_submit(Request $request){
+		$data = $request->validate([
+			'title' => 'required|max:255',
+			'attr' => '',
+			'oid' => 'required',
+		]);
+		
+		\App\ProductOption::where('oid', $data['oid'])->update(['name' => $data['title']]);
+		return redirect('/admin/options')->with('message', 'Атрибут изменен!');
+	}
+	
+	public function deleteoptions($id){
+		\App\ProductOption::where('oid','=', $id)->delete();
+		return redirect('/admin/options')->with('message', 'Опция удалена!');
+	}
+//***********Atributes********	
+	public function allattributes(){
+		$attributes= \App\ProductAttribute::all()->paginate(20);
 		return view('admin.attributes', compact('attributes'));
 	}
 	

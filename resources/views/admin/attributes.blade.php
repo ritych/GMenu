@@ -27,6 +27,8 @@
 		</tr>
 	@endforeach
 	</table>
+	{{ $attributes->links() }}
+	<a class="btn btn-default" href="{{ url('admin/attribute/create') }}" role="button">Создать новый</a>
 </div>
 @endsection
 
