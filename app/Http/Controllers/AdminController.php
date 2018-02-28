@@ -13,7 +13,7 @@ class AdminController extends Controller
 //*******************	
 	public function allpages(){
 		$pages= \App\Node::where('type', '=', 'page')->paginate(20);
-		return view('admin.pages', compact('pages'));
+		return view('admin.pages.pages', compact('pages'));
 	}
 //*******************	
 	public function content(){
@@ -23,16 +23,16 @@ class AdminController extends Controller
 //*******************	
 	public function allproducts(){
 		$products= \App\Node::where('type', '=', 'product')->paginate(20);
-		return view('admin.products', compact('products'));
+		return view('admin.products.products', compact('products'));
 	}
 //*******************	
 	public function allmenus(){
 		$menus= \App\Menu::all();
-		return view('admin.menu', compact('menus'));
+		return view('admin.menus.menu', compact('menus'));
 	}
 	
 	public function createmenu(){
-		return view('admin.menu_create');
+		return view('admin.menus.menu_create');
 	}
 	
 	public function createmenu_submit(Request $request){
@@ -57,7 +57,7 @@ class AdminController extends Controller
 	
 	public function editmenu($id){
 		$menu= \App\Menu::where('mid', $id)->get();
-		return view('admin.menu_edit', compact('menu', 'id'));
+		return view('admin.menus.menu_edit', compact('menu', 'id'));
 	}
 	
 	public function editmenu_submit(Request $request){
@@ -81,12 +81,12 @@ class AdminController extends Controller
 //***********Options********	
 	public function alloptions(){
 		$options= \App\ProductOption::join('product_attributes', 'product_options.aid', 'product_attributes.aid')->select('product_options.*', 'product_attributes.name as aname')->orderBy('aid')->paginate(20);
-		return view('admin.options', compact('options'));
+		return view('admin.options.options', compact('options'));
 	}
 	
 	public function createoptions(){
 		$attributes= \App\ProductAttribute::all();
-		return view('admin.option_create', compact('attributes'));
+		return view('admin.options.option_create', compact('attributes'));
 	}
 	
 	public function createoptions_submit(Request $request){
@@ -105,7 +105,7 @@ class AdminController extends Controller
 	
 	public function editoptions($id){
 		$option= \App\ProductOption::where('oid','=', $id)->get();
-		return view('admin.options_edit', compact('option', 'id'));
+		return view('admin.options.options_edit', compact('option', 'id'));
 	}
 	
 	public function editoptions_submit(Request $request){
@@ -126,11 +126,11 @@ class AdminController extends Controller
 //***********Atributes********	
 	public function allattributes(){
 		$attributes= \App\ProductAttribute::paginate(20);
-		return view('admin.attributes', compact('attributes'));
+		return view('admin.attributes.attributes', compact('attributes'));
 	}
 	
 	public function createattributes(){
-		return view('admin.attributes_create');
+		return view('admin.attributes.attributes_create');
 	}
 	
 	public function createattributes_submit(Request $request){
@@ -149,7 +149,7 @@ class AdminController extends Controller
 	
 	public function editattributes($id){
 		$attribute= \App\ProductAttribute::where('aid','=', $id)->get();
-		return view('admin.attributes_edit', compact('attribute', 'id'));
+		return view('admin.attributes.attributes_edit', compact('attribute', 'id'));
 	}
 	
 	public function editattributes_submit(Request $request){
@@ -167,4 +167,56 @@ class AdminController extends Controller
 		return redirect('/admin/attributes')->with('message', 'Атрибут удален!');
 	}
 	
+
+//***********Categories********	
+	public function allcategories(){
+		$categories= \App\Category::paginate(20);
+		return view('admin.categories.categories', compact('categories'));
+	}
+	
+	public function createcategory(){
+		return view('admin.categories.category_create');
+	}
+	
+	public function createcategory_submit(Request $request){
+		$data = $request->validate([
+			'title' => 'required|max:255',
+			'parent' => 'required|max:255',
+			'weight' => 'required|max:255',
+			'description' => 'max:255',
+		]);
+		
+		$category = new \App\Category;
+		$category->title = $data['title'];
+		$category->description = $data['description'];
+		$category->parent = $data['parent'];
+		$category->weight = $data['weight'];
+		$category->save();
+		
+		return redirect('/admin/categories')->with('message', 'Категория создана!');
+	}
+	
+	public function editcategory($id){
+		$category= \App\Category::where('cid','=', $id)->get();
+		return view('admin.categories.category_edit', compact('category', 'id'));
+	}
+	
+	public function editcategory_submit(Request $request){
+		$data = $request->validate([
+			'title' => 'required|max:255',
+			'parent' => 'required|max:255',
+			'weight' => 'required|max:255',
+			'description' => 'max:255',
+			'cid' => 'required',
+		]);
+		\App\Category::where('cid', $data['cid'])->update(['title' => $data['title'], 'description' => $data['description'], 'parent' => $data['parent'], 'weight' => $data['weight']]);
+		return redirect('/admin/categories')->with('message', 'Категория изменена!');
+	}
+	
+	public function deletecategory($id){
+		\App\Category::where('cid','=', $id)->delete();
+		return redirect('/admin/categories')->with('message', 'Категория удалена!');
+	}
+	
 }
+

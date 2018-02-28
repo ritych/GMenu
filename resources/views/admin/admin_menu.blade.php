@@ -25,6 +25,12 @@
 					</ul>
 				</li>
 				<li>
+					<a href="{{ url('/admin/categories') }}">Категории</a>
+					<ul>
+						<li><a href="{{ url('/admin/category/create') }}">Создать</a></li>
+					</ul>
+				</li>
+				<li>
 					<a href="{{ url('/admin/options') }}">Опции</a>
 					<ul>
 						<li><a href="{{ url('/admin/option/create') }}">Создать</a></li>
@@ -61,7 +67,7 @@
 		<li>
 			<a href="/">Сообщения</a>
 			<ul>
-				<li><a href="/">Создать</a></li>
+				<li><a href="/">Написать</a></li>
 				<li><a href="/">Список</a></li>
 			</ul>
 		</li>

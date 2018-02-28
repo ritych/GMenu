@@ -57,7 +57,13 @@ Route::post('/admin/attribute/create/submit', 'AdminController@createattributes_
 Route::get('/admin/attribute/edit/{id}', 'AdminController@editattributes');
 Route::post('/admin/attribute/edit/submit', 'AdminController@editattributes_submit');
 Route::get('/admin/attribute/delete/{id}', 'AdminController@deleteattributes');
-
+/****************/
+Route::get('/admin/categories', 'AdminController@allcategories');
+Route::get('/admin/category/create', 'AdminController@createcategory');
+Route::post('/admin/category/create/submit', 'AdminController@createcategory_submit');
+Route::get('/admin/category/edit/{id}', 'AdminController@editcategory');
+Route::post('/admin/category/edit/submit', 'AdminController@editcategory_submit');
+Route::get('/admin/category/delete/{id}', 'AdminController@deletecategory');
 
 
 Auth::routes();
