@@ -37,33 +37,33 @@ Route::get('/admin/page/create', 'PageController@createpage');
 Route::get('/admin/page/edit/{id}', 'PageController@editpage');
 Route::get('/admin/page/delete/{id}', 'PageController@deletepage');
 /****************/
-Route::get('/admin/menus', 'AdminController@allmenus');
-Route::get('/admin/menu/create', 'AdminController@createmenu');
-Route::post('/admin/menu/create/submit', 'AdminController@createmenu_submit');
-Route::get('/admin/menu/edit/{id}', 'AdminController@editmenu');
-Route::post('/admin/menu/edit/submit', 'AdminController@editmenu_submit');
-Route::get('/admin/menu/delete/{id}', 'AdminController@deletemenu');
+Route::get('/admin/menus', 'MenuController@allmenus');
+Route::get('/admin/menu/create', 'MenuController@createmenu');
+Route::post('/admin/menu/create/submit', 'MenuController@createmenu_submit');
+Route::get('/admin/menu/edit/{id}', 'MenuController@editmenu');
+Route::post('/admin/menu/edit/submit', 'MenuController@editmenu_submit');
+Route::get('/admin/menu/delete/{id}', 'MenuController@deletemenu');
 /****************/
-Route::get('/admin/options', 'AdminController@alloptions');
-Route::get('/admin/option/create', 'AdminController@createoptions');
-Route::post('/admin/option/create/submit', 'AdminController@createoptions_submit');
-Route::get('/admin/option/edit/{id}', 'AdminController@editoptions');
-Route::post('/admin/option/edit/submit', 'AdminController@editoptions_submit');
-Route::get('/admin/option/delete/{id}', 'AdminController@deleteoptions');
+Route::get('/admin/options', 'OptionController@alloptions');
+Route::get('/admin/option/create', 'OptionController@createoptions');
+Route::post('/admin/option/create/submit', 'OptionController@createoptions_submit');
+Route::get('/admin/option/edit/{id}', 'OptionController@editoptions');
+Route::post('/admin/option/edit/submit', 'OptionController@editoptions_submit');
+Route::get('/admin/option/delete/{id}', 'OptionController@deleteoptions');
 /****************/
-Route::get('/admin/attributes', 'AdminController@allattributes');
-Route::get('/admin/attribute/create', 'AdminController@createattributes');
-Route::post('/admin/attribute/create/submit', 'AdminController@createattributes_submit');
-Route::get('/admin/attribute/edit/{id}', 'AdminController@editattributes');
-Route::post('/admin/attribute/edit/submit', 'AdminController@editattributes_submit');
-Route::get('/admin/attribute/delete/{id}', 'AdminController@deleteattributes');
+Route::get('/admin/attributes', 'AttributeController@allattributes');
+Route::get('/admin/attribute/create', 'AttributeController@createattributes');
+Route::post('/admin/attribute/create/submit', 'AttributeController@createattributes_submit');
+Route::get('/admin/attribute/edit/{id}', 'AttributeController@editattributes');
+Route::post('/admin/attribute/edit/submit', 'AttributeController@editattributes_submit');
+Route::get('/admin/attribute/delete/{id}', 'AttributeController@deleteattributes');
 /****************/
-Route::get('/admin/categories', 'AdminController@allcategories');
-Route::get('/admin/category/create', 'AdminController@createcategory');
-Route::post('/admin/category/create/submit', 'AdminController@createcategory_submit');
-Route::get('/admin/category/edit/{id}', 'AdminController@editcategory');
-Route::post('/admin/category/edit/submit', 'AdminController@editcategory_submit');
-Route::get('/admin/category/delete/{id}', 'AdminController@deletecategory');
+Route::get('/admin/categories', 'CategoryController@allcategories');
+Route::get('/admin/category/create', 'CategoryController@createcategory');
+Route::post('/admin/category/create/submit', 'CategoryController@createcategory_submit');
+Route::get('/admin/category/edit/{id}', 'CategoryController@editcategory');
+Route::post('/admin/category/edit/submit', 'CategoryController@editcategory_submit');
+Route::get('/admin/category/delete/{id}', 'CategoryController@deletecategory');
 
-
+$router->resource('post', 'CategoryController');
 Auth::routes();
