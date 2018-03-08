@@ -27,7 +27,7 @@ class OptionController extends Controller
             'attr' => 'required',
         ]);
         ProductOption::createOption($data);
-        return redirect('/admin/options')->with('message', 'Опция создана!');
+        return redirect('/admin/options')->with('message', trans('admin/menu/message.message_create'));
     }
     
     public function editoptions($id)
@@ -44,12 +44,12 @@ class OptionController extends Controller
             'oid' => 'required',
         ]);
         ProductOption::editOption($data);
-        return redirect('/admin/options')->with('message', 'Атрибут изменен!');
+        return redirect('/admin/options')->with('message', trans('admin/menu/message.message_edit'));
     }
     
     public function deleteoptions($id)
     {
         ProductOption::deleteOption($id);
-        return redirect('/admin/options')->with('message', 'Опция удалена!');
+        return redirect('/admin/options')->with('message', trans('admin/menu/message.message_delete'));
     }
 }

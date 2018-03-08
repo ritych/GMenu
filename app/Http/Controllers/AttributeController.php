@@ -25,7 +25,7 @@ class AttributeController extends Controller
             'description' => 'max:255',
         ]);
         ProductAttribute::createAttribute($data);
-        return redirect('/admin/attributes')->with('message', 'Атрибут создан!');
+        return redirect('/admin/attributes')->with('message', trans('admin/attribute/message.message_create'));
     }
     
     public function editattributes($id)
@@ -42,12 +42,12 @@ class AttributeController extends Controller
             'aid' => 'required',
         ]);
         ProductAttribute::editAttribute($data);
-        return redirect('/admin/attributes')->with('message', 'Атрибут сохранен!');
+        return redirect('/admin/attributes')->with('message', trans('admin/attribute/message.message_edit'));
     }
     
     public function deleteattributes($id)
     {
         ProductAttribute::deleteAttribute($id);
-        return redirect('/admin/attributes')->with('message', 'Атрибут удален!');
+        return redirect('/admin/attributes')->with('message', trans('admin/attribute/message.message_delete'));
     }
 }

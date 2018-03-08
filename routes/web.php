@@ -17,7 +17,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/register', 'Auth\RegisterController@register');
     Route::post('/login', 'Auth\LoginController@login');
 	Route::post('/create_user', 'Auth\RegisterController@register');
-	
     Route::get('/logout', 'Auth\LoginController@logout');
 });
 
@@ -32,9 +31,12 @@ Route::get('/admin/product/add', 'ProductController@product_add');
 /****************/
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/content', 'AdminController@content');
-Route::get('/admin/page', 'AdminController@allpages');
+/******************/
+Route::get('/admin/page', 'PageController@allpages');
 Route::get('/admin/page/create', 'PageController@createpage');
+Route::post('/admin/page/create/submit', 'PageController@createmenu_submit');
 Route::get('/admin/page/edit/{id}', 'PageController@editpage');
+Route::post('/admin/page/edit/submit', 'PageController@editmenu_submit');
 Route::get('/admin/page/delete/{id}', 'PageController@deletepage');
 /****************/
 Route::get('/admin/menus', 'MenuController@allmenus');
@@ -65,5 +67,5 @@ Route::get('/admin/category/edit/{id}', 'CategoryController@editcategory');
 Route::post('/admin/category/edit/submit', 'CategoryController@editcategory_submit');
 Route::get('/admin/category/delete/{id}', 'CategoryController@deletecategory');
 
-$router->resource('post', 'CategoryController');
+//$router->resource('post', 'CategoryController');
 Auth::routes();

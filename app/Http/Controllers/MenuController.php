@@ -27,7 +27,7 @@ class MenuController extends Controller
            'description' => 'required|max:255',
         ]);
         Menu::createMenu($data);
-        return redirect('/admin/menus')->with('message', 'Пункт меню создан!');
+        return redirect('/admin/menus')->with('message',  trans('admin/menu/message.message_create'));
     }
     
     public function editmenu($id)
@@ -46,13 +46,13 @@ class MenuController extends Controller
            'mid' => 'required',
         ]);
         Menu::editMenu($data);
-        return redirect('/admin/menus')->with('message', 'Пункт меню изменен!');
+        return redirect('/admin/menus')->with('message', trans('admin/menu/message.message_edit'));
     }
     
     public function deletemenu($id)
     {
         Menu::deleteMenu($id);
-        return redirect('/admin/menus')->with('message', 'Пункт меню удален!');
+        return redirect('/admin/menus')->with('message', trans('admin/menu/message.message_delete'));
     }
     
 }
