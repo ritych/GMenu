@@ -5,7 +5,7 @@
 	<div class="col-lg-2">
 		<div class="phone">
 			<span class="phone_number">+7 (xxx) xxx-xx-xx</span>
-			<a href="/">позвоните мне</a>
+			<a href="/">{{ trans('message.call_me') }}</a>
 		</div>
 	</div>
 	<div class="col-lg-2">
@@ -20,7 +20,7 @@
 	<div class="col-lg-3">	
 		<div class="search">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Укажите что хотите найти">
+				<input type="text" class="form-control" placeholder="{{ trans('message.searching_text') }}">
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
 				</span>
@@ -35,11 +35,11 @@
 			@if (Route::has('login'))
 				<div class="top-right links">
 					@auth
-						<a href="{{ url('/profile') }}">Профиль</a>
-						<a href="{{ url('/logout') }}">Выход</a>
+						<a href="{{ url('/profile') }}">{{ trans('message.profile') }}</a>
+						<a href="{{ url('/logout') }}">{{ trans('message.logout') }}</a>
 					@else
-						<a href="{{ route('login') }}">Вход</a>
-						<a href="{{ route('register') }}">Регистрация</a>
+						<a href="{{ route('login') }}">{{ trans('message.login') }}</a>
+						<a href="{{ route('register') }}">{{ trans('message.register') }}</a>
 					@endauth
 				</div>
 			@endif
